@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I.T. & Computer Science Digital Resource Hub</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --text: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
+        
+        /* Navigation Header */
+        header { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; padding: 1rem 2rem; }
+        .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.4rem; font-weight: 700; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .search-bar { width: 100%; max-width: 400px; }
+        .search-bar input { width: 100%; padding: 0.6rem 1rem; border: 1px solid var(--border); border-radius: 6px; outline: none; }
+        
+        /* Layout Structure */
+        .main-container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; display: grid; grid-template-columns: 240px 1fr; gap: 2rem; }
+        
+        /* Sidebar Navigation */
+        sidebar { background: var(--surface); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border); height: fit-content; }
+        sidebar h3 { font-size: 0.9rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; letter-spacing: 0.5px; }
+        sidebar ul { list-style: none; }
+        sidebar li { margin-bottom: 0.5rem; }
+        sidebar a { color: var(--text); text-decoration: none; display: block; padding: 0.5rem 0.75rem; border-radius: 6px; font-weight: 500; font-size: 0.95rem; }
+        sidebar a:hover, sidebar a.active { background: #eff6ff; color: var(--primary); }
+
+        /* Main Content Grid */
+        .content-area { display: flex; flex-direction: column; gap: 1.5rem; }
+        .hero { background: linear-gradient(135deg, #1e293b, #0f172a); color: white; padding: 2rem; border-radius: 8px; }
+        .hero h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .hero p { color: #94a3b8; font-size: 1rem; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; transition: transform 0.2s, box-shadow 0.2s; }
+        .card:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); }
+        .card-badge { display: inline-block; padding: 0.25rem 0.5rem; background: #e0e7ff; color: #4338ca; border-radius: 4px; font-size: 0.75rem; font-weight: 600; margin-bottom: 0.75rem; }
+        .card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .card p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; }
+        .card a.btn { display: inline-block; text-decoration: none; background: var(--primary); color: white; padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.875rem; font-weight: 600; }
+        .card a.btn:hover { background: var(--primary-dark); }
+
+        /* Embed Container */
+        .embed-section { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; }
+        .embed-section h2 { margin-bottom: 1rem; font-size: 1.3rem; }
+        iframe { width: 100%; height: 500px; border: none; border-radius: 6px; background: #f1f5f9; }
+
+        @media (max-width: 768px) {
+            .main-container { grid-template-columns: 1fr; }
+            .search-bar { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">💻 Open I.T. Library</a>
+            <div class="search-bar">
+                <input type="text" placeholder="Search textbooks, research papers, topics...">
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        
+        <!-- Sidebar Navigation -->
+        <sidebar>
+            <h3>Categories</h3>
+            <ul>
+                <li><a href="#" class="active">All Resources</a></li>
+                <li><a href="#papers">Research Papers</a></li>
+                <li><a href="#books">Programming Books</a></li>
+                <li><a href="#courses">Documentation</a></li>
+            </ul>
+        </sidebar>
+
+        <!-- Main Content -->
+        <div class="content-area">
+            
+            <div class="hero">
+                <h1>Computer Science & Information Systems Library</h1>
+                <p>Free open-access textbooks, peer-reviewed research papers, and technical documentation.</p>
+            </div>
+
+            <!-- Library Cards Section -->
+            <div id="books" class="grid">
+                <div class="card">
+                    <span class="card-badge">Textbooks</span>
+                    <h3>Open Library CS Collection</h3>
+                    <p>Access thousands of borrowing-free textbooks covering algorithms, web development, and database architecture.</p>
+                    <a href="https://openlibrary.org/subjects/computer_science" target="_blank" class="btn">Explore Collection &rarr;</a>
+                </div>
+
+                <div class="card">
+                    <span class="card-badge">E-Books & Notes</span>
+                    <h3>FreeComputerBooks</h3>
+                    <p>Categorized directory of free technical e-books, lecture notes, and comprehensive IT documentation.</p>
+                    <a href="https://freecomputerbooks.com/" target="_blank" class="btn">Browse Books &rarr;</a>
+                </div>
+
+                <div class="card">
+                    <span class="card-badge">Curated Repositories</span>
+                    <h3>GitHub Open Books</h3>
+                    <p>Community-maintained collection of thousands of free programming and computer science resources.</p>
+                    <a href="https://github.com/EbookFoundation/free-programming-books" target="_blank" class="btn">View Repository &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Embedded Search Engine Section -->
+            <div id="papers" class="embed-section">
+                <h2>Search Global Open-Access Computer Science Papers</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.9rem;">Powered by CORE Aggregator — the largest repository of open academic research papers.</p>
+                <iframe src="https://core.ac.uk/embed/search"></iframe>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
